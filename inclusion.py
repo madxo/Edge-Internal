@@ -1,6 +1,9 @@
 import csv
 import nltk
 
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+
 from nltk.tokenize import word_tokenize
 from nltk.tree.tree import Tree
 from scipy.spatial import distance
