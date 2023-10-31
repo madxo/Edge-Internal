@@ -9,8 +9,9 @@ RUN pip install --no-cache-dir -r requirements.txt \
     && apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
-RUN pip install --no-cache-dir sentence-transformers
-RUN pip uninstall nvidia-nvtx-cu12 nvidia-nvjitlink-cu12 nvidia-nccl-cu12 nvidia-curand-cu12 nvidia-cufft-cu12 nvidia-cuda-runtime-cu12 nvidia-cuda-nvrtc-cu12 nvidia-cuda-cupti-cu12 nvidia-cublas-cu1 nvidia-cusparse-cu12 nvidia-cudnn-cu12 nvidia-cusolver-cu12
+RUN pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+RUN pip install transformers tqdm numpy scikit-learn scipy nltk sentencepiece pillow
+RUN pip install --no-cache-dir  --no-deps sentence-transformers
 
 
 EXPOSE 8000
