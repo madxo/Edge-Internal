@@ -1,3 +1,2 @@
 flask
 nltk
-sentence_transformers
